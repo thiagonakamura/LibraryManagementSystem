@@ -11,6 +11,9 @@ public class Book {
 	private String author;
 	private boolean available;
 	
+	public Book() {
+	}
+	
 	public Book(String title, String author, boolean available) {
 		super();
 		this.title = title;
