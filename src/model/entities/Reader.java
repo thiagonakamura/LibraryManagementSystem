@@ -8,16 +8,15 @@ import java.util.List;
  * Each Reader can borrow and return books, and keeps track of their own borrowed books.
  */
 public class Reader {
-
-	Library lib = new Library();
 	
 	private String name;
 	private List<Book> myBooks = new ArrayList<Book>();
+	private Library lib;
 	
-	public Reader(String name, List<Book> myBooks) {
+	public Reader(String name, Library lib) {
 		super();
 		this.name = name;
-		this.myBooks = myBooks;
+		this.lib = lib;
 	}
 
 	public String getName() {
@@ -71,7 +70,7 @@ public class Reader {
 	 */
 	public Book findBookByTitle(String title) {
 		for(Book x : myBooks) {
-			if(x.getTitle().equalsIgnoreCase(title) && x.isAvailable()) {
+			if(x.getTitle().equalsIgnoreCase(title)) {
 				return x;
 			}
 		}
